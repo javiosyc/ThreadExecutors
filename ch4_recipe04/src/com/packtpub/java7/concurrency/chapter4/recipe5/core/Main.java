@@ -7,7 +7,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import com.packtpub.java7.concurrency.chapter4.recipe5.task.TaskValidator;
-import com.packtpub.java7.concurrency.chapter4.recipe5.task.UserValidator;
+import com.packtpub.java7.concurrency.chapter4.recipe5.validator.UserValidator;
+import com.packtpub.java7.concurrency.chapter4.recipe5.validator.impl.DataBaseValidator;
+import com.packtpub.java7.concurrency.chapter4.recipe5.validator.impl.LDAPValidator;
 
 /**
  * This is the main class of the example. Creates two user validation systems and execute
@@ -27,8 +29,8 @@ public class Main {
 		String password="test";
 		
 		// Create two user validation objects
-		UserValidator ldapValidator=new UserValidator("LDAP");
-		UserValidator dbValidator=new UserValidator("DataBase");
+		UserValidator ldapValidator=new LDAPValidator();
+		UserValidator dbValidator=new DataBaseValidator();
 		
 		// Create two tasks for the user validation objects
 		TaskValidator ldapTask=new TaskValidator(ldapValidator, username, password);

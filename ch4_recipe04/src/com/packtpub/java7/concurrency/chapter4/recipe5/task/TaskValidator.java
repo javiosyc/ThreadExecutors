@@ -2,6 +2,8 @@ package com.packtpub.java7.concurrency.chapter4.recipe5.task;
 
 import java.util.concurrent.Callable;
 
+import com.packtpub.java7.concurrency.chapter4.recipe5.validator.UserValidator;
+
 /**
  * This class encapsulate a user validation system to be executed as a Callable object.
  * If the user is validated, it returns the name of the validation system. If not,
